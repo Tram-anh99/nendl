@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<!-- ========HEAD======== -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Web App</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Include Leaflet CSS and JavaScript -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <!-- mã JavaScript để tạo và điều khiển bản đồ Leaflet. -->
+</head>
+
+
+<!-- ==============BODY============ -->
+<body>
+      <!-- ==============HEADER========== -->
+      <header>
+            <div class="logo">
+                <!-- Your logo here -->
+            </div>
+            <nav class="menu">
+                <ul>
+                    <li><a href="#main-content">Nội dung trang hiện tại</a></li>
+                    <li><a href="#introduction">Giới thiệu</a></li>
+                    <li><a href="#contact">Liên hệ</a></li>
+                </ul>
+            </nav>
+        </header>
+      
+    <div class="container">
+      <!-- ================MAIN================ -->
+        <div class="main">
+            <div id="map"></div>   <!-- hiển thị bản đồ -->
+            <!-- Your main content here -->
+        </div>
+        <!-- ===============SIDEBAR================ -->
+        <div class="sidebar">
+            <button onclick="selectYear()">Chọn Năm</button>
+            <button onclick="exportAPI()">Xuất API Ảnh TIFF</button>
+        </div>
+    </div>
+    <!-- ==============FOOTER============= -->
+    <footer>
+        <!-- Footer content with contact information -->
+    </footer>
+    <!-- ====================JAVASCRIPT=================== -->
+
+    <script>
+        // JavaScript functions for button actions
+        function selectYear() {
+            // Action for selecting year
+            alert("Chọn năm");
+        }
+
+        function exportAPI() {
+            // Action for exporting API
+            alert("Xuất API Ảnh TIFF");
+        }
+
+        // JavaScript for Leaflet map
+        var map = L.map('map').setView([10.7769, 106.7009], 13);
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+        
+    </script>
+</body>
+</html>

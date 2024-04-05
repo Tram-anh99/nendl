@@ -1,0 +1,92 @@
+body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+  }
+  
+  header {
+      background-color: #cc6262;
+      color: #fff;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: center;  /* space-between; */
+      align-items: center; /* Canh menu theo chiều dọc */
+  }
+  
+  .container {
+      display: flex;
+      flex-wrap: wrap;
+  }
+  
+  .main {
+      flex: 2;
+      padding: 20px;
+  }
+  
+  .sidebar {
+      flex: 1;
+      padding: 20px;
+      background-color: #f4f4f4;
+  }
+  
+  footer {
+    background-color: #ca4848;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+.contact-info {
+    margin-top: 10px;
+    font-size: 14px; /* Thu nhỏ kích thước font */
+}
+
+.contact-info h3 {
+    font-size: 5px; /* Thu nhỏ kích thước font cho tiêu đề */
+}
+
+.contact-info p {
+    margin: 5px 0; /* Thu nhỏ khoảng cách giữa các dòng */
+}
+
+
+  
+.logo {
+      /* Your logo positioning styles here */
+}
+  
+  .menu {
+    display: flex;
+    justify-content: center;
+
+}
+
+.menu ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.menu ul li {
+    margin-right: 20px;
+}
+
+.menu ul li:last-child {
+    margin-right: 0; /* Loại bỏ margin phải của mục cuối cùng */
+}
+
+.menu ul li a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.menu ul li a:hover {
+    color: #ccc;
+}
+
+  
+  #map {
+      height: 850px;
+      width: 100%;
+  }
+  

@@ -1,0 +1,71 @@
+body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+  }
+  
+  header {
+      background-color: #333;
+      color: #fff;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+  }
+  
+  .container {
+      display: flex;
+      flex-wrap: wrap;
+  }
+  
+  .main {
+      flex: 2;
+      padding: 20px;
+  }
+  
+  .sidebar {
+      flex: 1;
+      padding: 20px;
+      background-color: #f4f4f4;
+  }
+  
+  footer {
+      background-color: #333;
+      color: #fff;
+      padding: 10px 20px;
+      text-align: center;
+  }
+  
+  .logo {
+      /* Your logo positioning styles here */
+  }
+  
+  .menu {
+    display: flex;
+    justify-content: center;
+
+}
+
+.menu ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu ul li {
+    margin-right: 20px;
+}
+
+.menu ul li a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.menu ul li a:hover {
+    color: #ccc;
+}
+
+  
+  #map {
+      height: 400px;
+      width: 100%;
+  }
+  
