@@ -1,0 +1,142 @@
+body {
+     margin: 0;
+     font-family: Arial, sans-serif;
+}
+
+header {
+     background-color: #cc6262;
+     color: #fff;
+     padding: 10px 20px;
+     display: flex;
+     justify-content: space-between; /* Canh logo và menu ở hai bên của header */
+     align-items: center; /* Canh menu theo chiều dọc */
+     font-family: 'Arial', sans-serif; /* Thay đổi font chữ */
+     height: 80px; /* Thay đổi chiều cao của header */
+     font
+
+
+}
+
+.container {
+     display: flex;
+     flex-wrap: wrap;
+}
+
+.main {
+     flex: 2.5;
+     /* padding: 20px; */
+}
+
+.sidebar {
+    flex: 0.5;
+    padding: 20px;
+    background-color: #f4f4f4;
+    display: flex;
+    flex-direction: column; /* Xếp các phần tử theo chiều dọc */
+    justify-content: center; /* Canh giữa theo chiều dọc */
+    align-items: center; /* Canh giữa theo chiều ngang */
+}
+
+.upper-button, .lower-button {
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-bottom: 10px; /* Khoảng cách giữa các nút */
+}
+
+.upper-button:hover, .lower-button:hover {
+    background-color: #555;
+}
+
+
+.button-container {
+    display: flex;
+    justify-content: space-between; /* Canh các nút cách đều nhau */
+    width: 200px; /* Độ rộng của button container */
+}
+
+.button-container button {
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.button-container button:hover {
+    background-color: #555;
+}
+
+
+footer {
+     background-color: #ca4848;
+     color: #fff;
+     padding: 10px;
+     text-align: center;
+}
+
+.contact-info {
+     margin-top: 5px;
+     font-size: 13px; /* Thu nhỏ kích thước font */
+}
+
+.contact-info h3 {
+     font-size: 14px; /* Thu nhỏ kích thước font cho tiêu đề */
+}
+
+.contact-info p {
+     margin: 3px 0; /* Thu nhỏ khoảng cách giữa các dòng */
+}
+
+.logo {
+    float: left; /* Căn logo về phía trái */
+    margin-right: 10px; /* Khoảng cách giữa logo và menu */
+}
+.logo img {
+    width: 100px; /* Điều chỉnh kích thước của logo */
+    height: auto; /* Giữ tỉ lệ khung hình */
+}
+
+
+
+.menu ul {
+     list-style-type: none;
+     padding: 0;
+     margin: 0;
+}
+
+.menu ul li {
+     margin-right: 20px;
+     display: inline;
+
+}
+
+.menu ul li:first-child {
+    margin-left: 0; /* Không có khoảng cách ở mục menu đầu tiên */
+}
+
+.menu ul li:last-child {
+     margin-right: 0; /* Loại bỏ margin phải của mục cuối cùng */
+}
+
+.menu ul li a {
+     text-decoration: none;
+     color: #fff;
+     margin-right: 15px; /* Khoảng cách giữa các mục menu */
+
+}
+
+.menu ul li a:hover {
+     color: #ccc;
+}
+
+#map {
+     height: 850px;
+     width: 100%;
+}

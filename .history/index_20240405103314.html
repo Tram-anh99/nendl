@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<!-- ========HEAD======== -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Web App</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Include Leaflet CSS and JavaScript -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <!-- mã JavaScript để tạo và điều khiển bản đồ Leaflet. -->
+</head>
+
+
+<!-- ==============BODY============ -->
+<body>
+      <!-- ==============HEADER========== -->
+      <header>
+            <div class="logo">
+                  <img src="img/icon_OPENGISFINAL(500x500px).png" alt="First Logo">
+              </div>
+              <div class="logo">
+                  <img src="./img/logo_slogan(lightbg).png "alt="Second Logo">
+              </div>
+              <div class="logo">
+                  <img src="img/logo(lightbg).png" alt="Third Logo">
+              </div>
+            <nav class="menu">
+                <ul>
+                    <li><a href="#main-content">Nội dung trang hiện tại</a></li>
+                    <li><a href="#introduction">Giới thiệu</a></li>
+                    <li><a href="#contact">Liên hệ</a></li>
+                </ul>
+            </nav>
+        </header>
+      
+    <div class="container">
+      <!-- ================MAIN================ -->
+        <div class="main">
+            <div id="map"></div>   <!-- hiển thị bản đồ -->
+            <!-- Your main content here -->
+        </div>
+        <!-- ===============SIDEBAR================ -->
+        <div class="sidebar">
+            <button class="upper-button" onclick="selectYear()">Chọn Năm</button>
+            <button class="lower-button" onclick="exportAPI()">Xuất API Ảnh TIFF</button>
+        </div>
+        
+    </div>
+    <!-- ==============FOOTER============= -->
+    <footer>
+      <div class="contact-info">
+            <h3>Thông tin liên hệ</h3>
+            <p>Địa chỉ: Số 1, Mạc Đĩnh Chi, Phường Bến Nghé, Quận 1, Thành phố Hồ Chí Minh</p>
+            <p>Điện thoại: 0949899521</p>
+            <p>Email: tramanh84265@gmail.com</p>
+        </div>
+    </footer>
+    <!-- ====================JAVASCRIPT=================== -->
+
+    <script>
+        // JavaScript functions for button actions
+        function selectYear() {
+            // Action for selecting year
+            alert("Chọn năm");
+        }
+
+        function exportAPI() {
+            // Action for exporting API
+            alert("Xuất API Ảnh TIFF");
+        }
+
+        // JavaScript for Leaflet map
+        var map = L.map('map').setView([10.7769, 106.7009], 13);
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+
+        L.marker([10.7769, 106.7009]).addTo(map)
+            .bindPopup('This is Ho Chi Minh City.')
+            .openPopup();
+    </script>
+</body>
+</html>

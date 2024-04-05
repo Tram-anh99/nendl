@@ -1,6 +1,6 @@
 body {
      margin: 0;
-     font-family: "Roboto", sans-serif; /* Sử dụng font Roboto */
+     font-family: 'Roboto', sans-serif; /* Sử dụng font Roboto */
      font-weight: 400; /* Cân nặng của font */
      font-size: 16px; /* Kích thước font */
      line-height: 1.6; /* Chiều cao dòng */
@@ -8,14 +8,14 @@ body {
 }
 
 header {
-     background-color: #cc6326bd;
+     background-color: #cc6262;
      color: #fff;
      padding: 10px 20px;
      display: flex;
      justify-content: space-between; /* Canh logo và menu ở hai bên của header */
      align-items: center; /* Canh menu theo chiều dọc */
      font-family: "Arial", sans-serif; /* Thay đổi font chữ */
-     height: 70px; /* Thay đổi chiều cao của header */
+     height: px; /* Thay đổi chiều cao của header */
      font-size: 18px;
 }
 
@@ -42,7 +42,7 @@ header {
 .upper-button,
 .lower-button {
      padding: 10px 20px;
-     background-color: #cc6326bd;
+     background-color: #333;
      color: #fff;
      border: none;
      border-radius: 5px;
@@ -64,7 +64,7 @@ header {
 
 .button-container button {
      padding: 10px 20px;
-     background-color: #cc6326bd;
+     background-color: #333;
      color: #fff;
      border: none;
      border-radius: 5px;
@@ -77,24 +77,23 @@ header {
 }
 
 footer {
-     background-color: #cc6326bd;
+     background-color: #ca4848;
      color: #fff;
      padding: 10px;
      text-align: center;
 }
 
 .contact-info {
-     margin-top: 2px;
+     margin-top: 5px;
      font-size: 13px; /* Thu nhỏ kích thước font */
 }
 
 .contact-info h3 {
-     font-size: 16px; /* Thu nhỏ kích thước font cho tiêu đề */
+     font-size: 14px; /* Thu nhỏ kích thước font cho tiêu đề */
 }
 
 .contact-info p {
      margin: 3px 0; /* Thu nhỏ khoảng cách giữa các dòng */
-     font-size: 15px;
 }
 
 .logo {
@@ -138,8 +137,4 @@ footer {
 #map {
      height: 850px;
      width: 100%;
-}
-
-.margin0 {
-     margin: 0;
 }

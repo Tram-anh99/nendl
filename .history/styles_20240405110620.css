@@ -8,7 +8,7 @@ body {
 }
 
 header {
-     background-color: #cc6326bd;
+     background-color: #ca9c48;
      color: #fff;
      padding: 10px 20px;
      display: flex;
@@ -42,7 +42,7 @@ header {
 .upper-button,
 .lower-button {
      padding: 10px 20px;
-     background-color: #cc6326bd;
+     background-color: #333;
      color: #fff;
      border: none;
      border-radius: 5px;
@@ -64,7 +64,7 @@ header {
 
 .button-container button {
      padding: 10px 20px;
-     background-color: #cc6326bd;
+     background-color: #ca9c48;
      color: #fff;
      border: none;
      border-radius: 5px;
@@ -77,10 +77,12 @@ header {
 }
 
 footer {
-     background-color: #cc6326bd;
+     background-color: #ca9c48;
      color: #fff;
      padding: 10px;
      text-align: center;
+     /* height: 60px; Thay đổi chiều cao của header */
+
 }
 
 .contact-info {
@@ -138,8 +140,4 @@ footer {
 #map {
      height: 850px;
      width: 100%;
-}
-
-.margin0 {
-     margin: 0;
 }
