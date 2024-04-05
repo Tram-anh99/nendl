@@ -41,17 +41,13 @@ body {
      width: 100%;
      padding: 10px 20px;
      margin-bottom: 10px;
-     font-size: 18px;
+     font-size: 16px;
      cursor: pointer;
      background-color: #063970;
      color: #fff;
      border: none;
      border-radius: 5px;
      transition: background-color 0.3s ease;
-     font-family: "Times New Roman", Times, serif; /* Font family */
-     font-weight: bold; /* In đậm */
-
-
 }
 
 .upper-button:hover,
@@ -82,7 +78,7 @@ body {
 footer {
      background-color: #063970;
      color: #fff;
-     padding: 2px;
+     padding: 10px;
      text-align: center;
 }
 

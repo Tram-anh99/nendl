@@ -1,0 +1,81 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: flex;
+    min-height: 100vh;
+}
+
+.sidebar {
+    flex: 0 0 250px;
+    background-color: #f0f0f0;
+    /* Sidebar styles */
+    padding: 20px;
+}
+
+.logo {
+    margin-bottom: 20px;
+    /* Logo styles */
+}
+
+.logo img {
+    max-width: 100%;
+}
+
+.menu {
+    /* Menu styles */
+}
+
+.menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu li {
+    margin-bottom: 10px;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+}
+
+.buttons {
+    margin-top: 20px;
+}
+
+.buttons button {
+    display: block;
+    width: 100%;
+    padding: 10px 0;
+    margin-bottom: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+}
+
+.main-content {
+    flex: 1;
+    padding: 20px;
+}
+
+#map {
+    height: 300px; /* Adjust height as needed */
+    background-color: #ddd; /* Placeholder for map */
+}
+
+.footer {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    text-align: center;
+    /* Footer styles */
+}

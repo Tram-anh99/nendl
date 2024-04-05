@@ -1,0 +1,58 @@
+body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+  }
+  
+  .container {
+      display: flex;
+      min-height: 100vh;
+  }
+  
+  .sidebar {
+      flex: 0 0 250px;
+      background-color: #f0f0f0;
+      /* Sidebar styles */
+  }
+  
+  .main-content {
+      flex: 1;
+      padding: 20px;
+  }
+  
+  #map {
+      height: 300px; /* Adjust height as needed */
+      background-color: #ddd; /* Placeholder for map */
+      margin-bottom: 20px;
+  }
+  
+  .menu {
+      background-color: #ccc;
+      padding: 10px;
+      margin-bottom: 20px;
+      /* Menu styles */
+  }
+  
+  .buttons {
+      margin-bottom: 20px;
+  }
+  
+  .buttons button {
+      padding: 10px 20px;
+      margin-right: 10px;
+      font-size: 16px;
+      cursor: pointer;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+  }
+  
+  .footer {
+      background-color: #333;
+      color: #fff;
+      padding: 10px 20px;
+      text-align: center;
+      /* Footer styles */
+  }
+  

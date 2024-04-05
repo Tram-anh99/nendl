@@ -1,9 +1,9 @@
 body {
      margin: 0;
-     /* font-family: "Roboto", sans-serif; Sử dụng font Roboto */
+     font-family: "Roboto", sans-serif; /* Sử dụng font Roboto */
      font-weight: 400; /* Cân nặng của font */
      font-size: 16px; /* Kích thước font */
-     line-height: 1; /* Chiều cao dòng */
+     line-height: 1.6; /* Chiều cao dòng */
      color: #333; /* Màu văn bản */
 }
 
@@ -13,10 +13,11 @@ body {
      padding: 10px 20px;
      display: flex;
      justify-content: space-between; /* Canh logo và menu ở hai bên của header */
-/* align-items: center; Canh menu theo chiều dọc */
-/* font-family: "Arial", sans-serif; Thay đổi font chữ */
-/* height: 50px; Thay đổi chiều cao của header */
-/* font-size: 18px; }*/
+     /* align-items: center; Canh menu theo chiều dọc */
+     /* font-family: "Arial", sans-serif; Thay đổi font chữ */
+     /* height: 50px; Thay đổi chiều cao của header */
+     /* font-size: 18px; }*/
+
 
 .container {
      display: flex;
@@ -29,29 +30,32 @@ body {
 }
 
 .sidebar {
-     flex: 0 0 250px;
-     background-color: #f0f0f0;
-     /* Sidebar styles */
+     /* flex: 0.5;
      padding: 20px;
+     background-color: #f4f4f4;
+     display: flex;
+     flex-direction: column; /* Xếp các phần tử theo chiều dọc */
+     /* justify-content: center; /* Canh giữa theo chiều dọc */
+     /*align-items: center; Canh giữa theo chiều ngang */
+     width: 250px;
+     background-color: #f4f4f4;
+     padding: 20px;
+     box-sizing: border-box;
+     float: left;
+     height: 100vh;
+     overflow-y: auto; /* Tránh tràn nội dung nếu nội dung quá dài */
 }
 
 .upper-button,
 .lower-button {
-     display: block;
-     width: 100%;
      padding: 10px 20px;
-     margin-bottom: 10px;
-     font-size: 18px;
-     cursor: pointer;
-     background-color: #063970;
+     background-color: #cc6326bd;
      color: #fff;
      border: none;
      border-radius: 5px;
+     cursor: pointer;
      transition: background-color 0.3s ease;
-     font-family: "Times New Roman", Times, serif; /* Font family */
-     font-weight: bold; /* In đậm */
-
-
+     margin-bottom: 10px; /* Khoảng cách giữa các nút */
 }
 
 .upper-button:hover,
@@ -67,7 +71,7 @@ body {
 
 .button-container button {
      padding: 10px 20px;
-     background-color: #063970;
+     background-color: #cc6326bd;
      color: #fff;
      border: none;
      border-radius: 5px;
@@ -80,9 +84,9 @@ body {
 }
 
 footer {
-     background-color: #063970;
+     background-color: #cc6326bd;
      color: #fff;
-     padding: 2px;
+     padding: 10px;
      text-align: center;
 }
 
@@ -101,32 +105,28 @@ footer {
 }
 
 .logo {
-     margin-bottom: 20px;
-     /* Logo styles */
+     float: left; /* Căn logo về phía trái */
+     margin-right: 10px; /* Khoảng cách giữa logo và menu */
+     margin-top: 10px;
 }
 .logo img {
-     max-width: 100%;
-}
-.menu {
-     display: flex;
-     justify-content: center; /* căn giữa theo chiều ngang */
-     align-items: center; /* căn giữa theo chiều dọc */
+     width: 90px; /* Điều chỉnh kích thước của logo */
+     height: auto; /* Giữ tỉ lệ khung hình */
 }
 .menu ul {
-     list-style: none;
+     list-style-type: none;
      padding: 0;
      margin: 0;
 }
 
-.menu li {
-     margin-bottom: 30px;
-     margin-top: 30px;
+.menu ul li {
+     margin-bottom: 10px;
 }
 
-.menu a {
+.menu ul li a {
      text-decoration: none;
-     color: #080808;
-     font-size: 25px;
+     color: #333;
+     display: block;
 }
 .menu ul li:first-child {
      margin-left: 0; /* Không có khoảng cách ở mục menu đầu tiên */
@@ -137,21 +137,14 @@ footer {
 }
 
 .menu ul li a:hover {
-     color: #104f92;
-     transition: color 0.3s; /* Thêm hiệu ứng chuyển màu trong 0.3s */
+     color: #ccc;
 }
 
 #map {
-     height: 860px;
+     height: 850px;
      width: 100%;
 }
 
 .margin0 {
      margin: 0;
-}
-hr {
-     margin-top: 30px; /* Khoảng cách trên là 20px */
-     margin-bottom: 40px; /* Khoảng cách dưới là 20px */
-     width: 80%; /* Chiều rộng là 80% của phần chứa */
-     border-style: dashed; /* Đường nét đứt */
 }

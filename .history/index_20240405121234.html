@@ -7,8 +7,8 @@
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <title>My Web App</title>
             <!-- Liên kết đến Google Fonts -->
-            <!-- <link rel="stylesheet"
-                  href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"> -->
+            <link rel="stylesheet"
+                  href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap">
             <link rel="stylesheet" href="styles.css">
             <!-- Include Leaflet CSS and JavaScript -->
             <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
@@ -31,19 +31,17 @@
                   <!-- ===============SIDEBAR================ -->
                   <div class="sidebar">
                         <div class="logo">
-                              <img src="img/logo_OPENGIS (light bg) (500x500px).png"
-                                    alt="First Logo">
+                              <img src="img/logo_OPENGIS (light bg) (500x500px).png" alt="First Logo">
                         </div>
-                        <hr>
-                        <nav class="menu">
-                              <ul>
-                                    <li><a href="#main-content"><h3>Trang chủ</h3></a></li>
-                                    <li><a href="intro.html"><h3>Giới thiệu</h3></a></li>
-                                    <li><a href="contact.html"><h3>Liên hệ</h3></a></li>
-                              </ul>
+
+                       <nav class="menu">
+                        <ul>
+                              <li><a href="#main-content">Trang chủ</a></li>
+                              <li><a href="#introduction">Giới thiệu</a></li>
+                              <li><a href="#contact">Liên hệ</a></li>
+                        </ul>
                         </nav>
-                        <hr>
-                        <button class="upper-button" onclick="selectYear()">Chọn Năm</button>
+                         <button class="upper-button" onclick="selectYear()">Chọn Năm</button>
                         <button class="lower-button" onclick="exportAPI()">Xuất API Ảnh
                               TIFF</button>
                   </div>
