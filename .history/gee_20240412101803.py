@@ -1,6 +1,6 @@
 import ee
 import geemap
-import os
+
 m = geemap.Map()
 
 # Bước 1: Truy cập Google Earth Engine

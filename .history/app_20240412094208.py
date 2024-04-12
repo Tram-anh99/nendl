@@ -3,7 +3,7 @@ from flask import Flask, render_template, request
 app = Flask(__name__)
 
 # Route để hiển thị form nhập giá trị a và b
-@app.route('/home')
+@app.route('/')
 def index():
     return render_template('index.html')
 
