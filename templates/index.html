@@ -39,14 +39,36 @@
                         <nav class="menu">
                               <ul>
                                     <li><a href="#main-content"><h3>Trang chủ</h3></a></li>
-                                    <li><a href="intro.html"><h3>Giới thiệu</h3></a></li>
-                                    <li><a href="contact.html"><h3>Liên hệ</h3></a></li>
+                                    <li><a href="./intro.html"><h3>Giới thiệu</h3></a></li>
+                                    <li><a href="./contact.html"><h3>Liên hệ</h3></a></li>
                               </ul>
                         </nav>
                         <hr>
-                        <button class="upper-button" onclick="selectYear()">Chọn Năm</button>
-                        <button class="lower-button" onclick="exportAPI()">Xuất API Ảnh
+                        <!-- <button class="upper-button" onclick="selectYear()">Chọn Năm</button> -->
+                        <!-- <button type="button" class="upper-button" onclick="selectStartDate()">Ngày bắt đầu</button> -->
+
+
+                        <!-- <button class="upper-button" onclick="selectYear()">Chọn Năm</button> -->
+                        <!-- <button type="button" class="upper-button" onclick="selectEndDate()">Ngày kết thúc</button> -->
+
+                        <form action="/process_year" method="post">
+                              <label for="start_date">Start Date:</label>
+                              <!-- <input type="date" class="upper-button" name="start_date"><br><br>
+                              <label for="end_date">End Date:</label>
+                              <input type="date" class="upper-button"  name="end_date"><br><br> -->
+                              <!-- Nút để mở trình chọn ngày cho ngày bắt đầu -->
+                              <!-- <button type="button" class="upper-button" onclick="selectStartDate()">Choose Start Date</button> -->
+                              <input type="text" id="year" name="year">
+
+                              <!-- Nút để mở trình chọn ngày cho ngày kết thúc -->
+                              <!-- <button type="button" class="upper-button" onclick="selectEndDate()">Choose End Date</button><br><br> -->
+                              <!-- <button type="submit" class="upper-button" >Submit</button> -->
+                              <button class="lower-button" onclick="exportAPI()">Xuất API Ảnh
                               TIFF</button>
+                          </form>
+
+
+                        
                   </div>
 
             </div>
@@ -64,14 +86,28 @@
 
             <script>
         // JavaScript functions for button actions
-        function selectYear() {
+        //function selectYear() {
             // Action for selecting year
-            alert("Chọn năm");
-        }
+            //alert("Chọn năm");
+       // }
 
         function exportAPI() {
             // Action for exporting API
             alert("Xuất API Ảnh TIFF");
+        }
+
+        // Hàm mở trình chọn ngày cho ngày bắt đầu
+        function selectStartDate() {
+            var currentDate = new Date();
+            var startDateInput = document.getElementById("start_date");
+            startDateInput.value = prompt("Choose start date:", currentDate.toISOString().split('T')[0]);
+        }
+
+        // Hàm mở trình chọn ngày cho ngày kết thúc
+        function selectEndDate() {
+            var currentDate = new Date();
+            var endDateInput = document.getElementById("end_date");
+            endDateInput.value = prompt("Choose end date:", currentDate.toISOString().split('T')[0]);
         }
 
         // JavaScript for Leaflet map

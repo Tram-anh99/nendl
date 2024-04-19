@@ -17,97 +17,9 @@ aoi = ee.FeatureCollection("FAO/GAUL_SIMPLIFIED_500m/2015/level2") \
 
 # Bước 3: Nhập dữ liệu Landsat 8
 # Xác định ngày bắt đầu và ngày kết thúc
-startDate = '-01-01'
-endDate = '-12-31'
+startDate = '2019-01-01'
+endDate = '2019-12-31'
 
-
-def nhietdo(startDate,endDate):
-    applyScaleFactors(image)
-    cloudMask(image)
-    # Nhập và xử lý trước ảnh Landsat 8
-    image = ee.ImageCollection("LANDSAT/LC08/C02/T1_L2") \
-                .filterBounds(aoi) \
-                .filterDate(startDate, endDate) \
-                .map(applyScaleFactors) \
-                .map(cloudMask) \
-                .median() \
-                .clip(aoi)
-
-    # Xác định các tham số hiển thị cho hình ảnh True Color (dải 4, 3 và 2)
-    visualization = {
-        'bands': ['SR_B4', 'SR_B3', 'SR_B2'],
-        'min': 0.0,
-        'max': 0.15,
-    }
-    # Tính chỉ số thực vật chênh lệch chuẩn hóa (NDVI)
-    ndvi = image.normalizedDifference(['SR_B5', 'SR_B4']).rename('NDVI')
-
-    # Xác định các tham số trực quan hóa NDVI
-    ndviPalette = {
-        'min': -1,
-        'max': 1,
-        'palette': ['blue', 'white', 'green']
-    }
-    # Tính giá trị NDVI tối thiểu trong AOI
-    ndvi_min_reduce = ndvi.reduceRegion(
-            reducer   = ee.Reducer.min(),
-            geometry  = aoi,
-            scale     = 30,
-            maxPixels = 1e9
-        )
-
-    ndviMin = ee.Number(ndvi_min_reduce.values().get(0))
-
-    # Tính giá trị NDVI lớn nhất trong AOI
-    ndvi_max_reduce = ndvi.reduceRegion(
-            reducer   = ee.Reducer.max(),
-            geometry  = aoi,
-            scale     = 30,
-            maxPixels = 1e9
-        )
-
-    ndviMax = ee.Number(ndvi_max_reduce.values().get(0))
-    # NDVI_min đại diện cho giá trị NDVI tối thiểu và NDVI_max đại diện cho giá trị NDVI tối đa
-    fv = ((ndvi.subtract(ndviMin)).divide(ndviMax.subtract(ndviMin))) \
-            .pow(ee.Number(2)) \
-            .rename('FV')
-
-    # Tính toán độ phát xạ
-    # Công thức: 0,004 * FV + 0,986
-    # Tính toán độ phát xạ bề mặt đất (EM) bằng cách sử dụng Phân số th��c vật (FV).
-    # Hệ số 0,004 biểu thị sự thay đổi độ phát xạ do thảm thực vật,
-    # và hệ số 0,986 biểu thị độ phát xạ cơ bản cho các bề mặt khác.
-    em = fv.multiply(ee.Number(0.004)).add(ee.Number(0.986)).rename('EM')
-    # Ước tính nhiệt độ bề mặt đất
-    # Chọn Thermal Band (Band 10) và Đổi tên
-    thermal = image.select('ST_B10').rename('thermal')
-    # Bây giờ, hãy tính nhiệt độ bề mặt đất (LST)
-    # Công thức: (TB / (1 + (λ * (TB / 1.438)) * ln(em))) - 273,15
-    lst = thermal.expression(
-        '(TB / (1 + (0.00115 * (TB / 1.438)) * log(em))) - 273.15', {
-            'TB': thermal.select('thermal'),  # Chọn dải nhiệt ( TB)
-            'em': em  # Gán độ phát xạ (em)
-        }).rename('LST Ho Chi Minh 2019')
-    minLST = 15  # Giá trị LST tối thiểu
-    maxLST = 45  # Giá trị LST tối đa
-    # Xác định bảng màu cho Legend
-    palette = [
-        '040274', '040281', '0502a3', '0502b8', '0502ce', '0502e6',
-        '0602ff', '235cb1', '307ef3', '269db1', '30c8e2', '32d3ef',
-        '3be285', '3ff38f', '86e26f', '3ae237', 'b5e22e', 'd6e21f',
-        'fff705', 'ffd611', 'ffb613', 'ff8b13', 'ff6e08', 'ff500d',
-        'ff0000', 'de0101', 'c21301', 'a71001', '911003', '210300'
-    ]   
-    out_dir = './static/output/'
-    out_file = os.path.join(out_dir, 'lst_hcm.tif')
-    print(out_file)
-    hcm_region=aoi.geometry().bounds()
-    geemap.ee_export_image(lst, filename=out_file, scale=140,region=hcm_region)
-
-    
-    # ========================
-    
-    
 # Áp dụng các hệ số tỷ lệ.
 def applyScaleFactors(image):
     # Giá trị chia tỷ lệ và độ lệch cho các dải quang
