@@ -47,11 +47,10 @@
                         <!-- <button class="upper-button" onclick="selectYear()">Chọn Năm</button> -->
                         <!-- <button type="button" class="upper-button" onclick="selectStartDate()">Ngày bắt đầu</button> -->
 
-
                         <!-- <button class="upper-button" onclick="selectYear()">Chọn Năm</button> -->
                         <!-- <button type="button" class="upper-button" onclick="selectEndDate()">Ngày kết thúc</button> -->
 
-                        <form action="/process_year" method="post">
+                        <form action="/nhietdo" method="post">
                               <label for="start_date">Start Date:</label>
                               <!-- <input type="date" class="upper-button" name="start_date"><br><br>
                               <label for="end_date">End Date:</label>
@@ -64,11 +63,15 @@
                               <!-- <button type="button" class="upper-button" onclick="selectEndDate()">Choose End Date</button><br><br> -->
                               <!-- <button type="submit" class="upper-button" >Submit</button> -->
                               <button class="lower-button" onclick="exportAPI()">Xuất API Ảnh
-                              TIFF</button>
-                          </form>
+                                    TIFF</button>
+                        </form>
+                        {% if year %}
+                        <h2>Result {{ year }}:</h2>
+                        <!-- <p>Area: {{ year }}</p> -->
+                        <!-- <p>Link: {{ kq }}</p> -->
+                        <p>Tải kết quả: <a href="/static/output/{{ kq }}">Download</a></p>
+                        {% endif %}
 
-
-                        
                   </div>
 
             </div>

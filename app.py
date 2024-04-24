@@ -1,8 +1,16 @@
+import ee
+import geemap # type: ignore
+import os
+
 from flask import Flask, render_template, request
 from dtcn import dientich_chunhat
-from gee_v1 import nhietdo
+import gee_v1
 
 app = Flask(__name__)
+
+ee.Initialize()
+aoi = ee.FeatureCollection("FAO/GAUL_SIMPLIFIED_500m/2015/level2") \
+        .filter(ee.Filter.eq('ADM1_NAME', 'Ho Chi Minh City'))
 
 # Route để hiển thị form nhập giá trị a và b
 @app.route('/home')
@@ -21,10 +29,9 @@ def dientich():
 @app.route('/nhietdo', methods=['GET', 'POST'])
 def tinhnhietdo():
     if request.method == 'POST':
-        start_date = float(request.form['startDate'])
-        end_date = float(request.form['endDate'])
-        area = nhietdo(start_date, end_date)
-        return render_template('dtcn.html', area=area)
+        year = float(request.form['year'])
+        kq = gee_v1.nhietdo(year)
+        return render_template('index.html', year=year, kq=kq)
     return render_template('index.html')
 
 
