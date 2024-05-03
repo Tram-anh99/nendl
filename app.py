@@ -5,6 +5,7 @@ import os
 from flask import Flask, render_template, request
 from dtcn import dientich_chunhat
 import gee_v1
+from code.lossless import main
 
 app = Flask(__name__)
 
@@ -34,6 +35,13 @@ def tinhnhietdo():
         return render_template('index.html', year=year, kq=kq)
     return render_template('index.html')
 
+@app.route('/nen', methods=['GET', 'POST'])
+def tach_ten_file():
+    if request.method == 'POST':
+        year = float(request.form['year'])
+        kq = gee_v1.nhietdo(year)
+        return render_template('index.html', year=year, kq=kq)
+    return render_template('index.html')
 
 
 if __name__ == '__main__':
