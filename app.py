@@ -1,7 +1,7 @@
 import ee
 import geemap # type: ignore
 import os
-
+import subprocess
 from flask import Flask, render_template, request
 from dtcn import dientich_chunhat
 import gee_v1
@@ -14,7 +14,7 @@ aoi = ee.FeatureCollection("FAO/GAUL_SIMPLIFIED_500m/2015/level2") \
         .filter(ee.Filter.eq('ADM1_NAME', 'Ho Chi Minh City'))
 
 # Route để hiển thị form nhập giá trị a và b
-@app.route('/home')
+@app.route('/')
 def index():
     return render_template('index.html')
 
@@ -35,13 +35,39 @@ def tinhnhietdo():
         return render_template('index.html', year=year, kq=kq)
     return render_template('index.html')
 
-@app.route('/nen', methods=['GET', 'POST'])
-def tach_ten_file():
-    if request.method == 'POST':
-        year = float(request.form['year'])
-        kq = gee_v1.nhietdo(year)
-        return render_template('index.html', year=year, kq=kq)
-    return render_template('index.html')
+@app.route('/run_main', methods=['POST'])
+def run_main():
+    try:
+        # Nhận dữ liệu từ request
+        image_path = request.form['image_path']
+
+        # Đường dẫn tuyệt đối hoặc tương đối đến file main.py
+        main_path = os.path.join("path_to_main_directory", "main.py")
+
+        # Gọi file main.py bằng subprocess
+        process = subprocess.run(["python", main_path], input=image_path, text=True, capture_output=True)
+
+        # Kiểm tra và trả về kết quả
+        if process.returncode == 0:
+            output = process.stdout.strip()  # Kết quả trả về từ file main.py
+            return output
+        else:
+            return "Có lỗi xảy ra khi thực thi file main.py"
+    except Exception as e:
+        return str(e)
+    
+@app.route('/nen')
+def nen():
+    return render_template('nen.html')
+
+@app.route('/intro')
+def intro():
+    return render_template('intro.html')
+
+@app.route('/contact')
+def contact():
+    return render_template('contact.html')
+
 
 
 if __name__ == '__main__':

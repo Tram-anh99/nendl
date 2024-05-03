@@ -10,7 +10,7 @@
             <!-- <link rel="stylesheet"
                   href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"> -->
             <!-- <link rel="stylesheet" href="styles.css"> -->
-            <link rel="stylesheet" href="../static/css/styles.css">
+            <link rel="stylesheet" href="static/css/styles.css">
             <!-- Include Leaflet CSS and JavaScript -->
             <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
             <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
@@ -38,9 +38,11 @@
                         <hr>
                         <nav class="menu">
                               <ul>
-                                    <li><a href="../templates/intro.html"><h3>Giới thiệu</h3></a></li>
-                                    <li><a href="../templates/contact.html"><h3>Liên hệ</h3></a></li>
-                                    <li><a href="../templates/error.html"><h3>Nén ảnh</h3></a></li>
+                                    <li><a href="{{ url_for('intro') }}"><h3>Giới thiệu</h3></a></li>
+                                    <li><a href="{{ url_for('contact') }}"><h3>Liên hệ</h3></a></li>
+                                    <!-- <li><a href="../templates/error.html"><h3>Nén ảnh</h3></a></li> -->
+                                    <li><a href="{{ url_for('nen') }}"><h3>Nén ảnh</h3></a></li>
+                                    
                               </ul>
                         </nav>
                         <hr>
