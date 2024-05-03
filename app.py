@@ -42,7 +42,7 @@ def run_main():
         image_path = request.form['image_path']
 
         # Đường dẫn tuyệt đối hoặc tương đối đến file main.py
-        main_path = os.path.join("path_to_main_directory", "main.py")
+        main_path = os.path.join("../code./lossless", "main.py")
 
         # Gọi file main.py bằng subprocess
         process = subprocess.run(["python", main_path], input=image_path, text=True, capture_output=True)
