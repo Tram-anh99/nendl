@@ -5,7 +5,7 @@ import os
 from flask import Flask, render_template, request
 from dtcn import dientich_chunhat
 import gee_v1
-from code.lossless import main
+# from code.lossless import main
 
 app = Flask(__name__)
 

@@ -155,3 +155,14 @@ hr {
      width: 80%; /* Chiều rộng là 80% của phần chứa */
      border-style: dashed; /* Đường nét đứt */
 }
+#year {
+     /* Thêm các thuộc tính CSS tại đây */
+     width: 100%; /* Chiều rộng 100% của phần tử */
+     padding: 8px; /* Khoảng cách nội dung từ viền của phần tử */
+     border: 1px solid #ccc; /* Viền 1px đường kẻ màu xám nhạt */
+     border-radius: 4px; /* Bo tròn góc 4px */
+     font-size: 16px; /* Kích thước chữ 16px */
+     box-sizing: border-box; /* Bao gồm cả padding và border trong kích thước của phần tử */
+     margin-bottom: 10px;
+ }
+ 
